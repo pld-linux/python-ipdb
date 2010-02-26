@@ -11,19 +11,21 @@ Source0:	http://pypi.python.org/packages/source/i/ipdb/ipdb-%{ver}-r%{svn_rev}.t
 # Source0-md5:	21354e9d4c7fd87908d543418de0d131
 URL:		http://pypi.python.org/pypi/ipdb/
 BuildRequires:	python
+BuildRequires:	python-devel
+BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python-modules
 Requires:	python-ipython
+Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Allows to use: 'from ipdb import set_trace; set_trace()'
 
-You then get all the nice stuff from IPython (tab completion, nice tracebacks)
-right in pdb.
+You then get all the nice stuff from IPython (tab completion, nice
+tracebacks) right in pdb.
 
 %prep
 %setup -q -n %{module}-%{ver}-r%{svn_rev}
